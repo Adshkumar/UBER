@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Add these styles to App.css */
+.fixed {
+  position: fixed !important;
+}
+
+.z-50 {
+  z-index: 50 !important;
+}
+
+/* Ensure popup can be seen */
+.translate-y-0 {
+  transform: translateY(0) !important;
+}
+
+/* Remove any conflicting styles */
+#root {
+  max-width: 100% !important; /* Remove the 1280px restriction */
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+/* Make sure body doesn't restrict height */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%;
+}
