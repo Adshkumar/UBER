@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom' // Added useLocation
 import { useEffect, useContext } from 'react'
 import { SocketContext } from '../context/SocketContext'
 import { useNavigate } from 'react-router-dom'
+import 'remixicon/fonts/remixicon.css'
 import LiveTracking from '../components/LiveTracking'
 
 const Riding = () => {
@@ -22,6 +23,12 @@ const Riding = () => {
 
     return (
         <div className='h-screen'>
+              <button
+                onClick={() => navigate(-1)}
+                className='absolute left-4 top-6 z-20 bg-white p-2 rounded-full shadow'
+            >
+                <i className="ri-arrow-left-line text-2xl"></i>
+            </button>
             <Link to='/home' className='fixed right-2 top-2 h-10 w-10 bg-white flex items-center justify-center rounded-full'>
                 <i className="text-lg font-medium ri-home-5-line"></i>
             </Link>

@@ -42,7 +42,9 @@ const CaptainHome = () => {
             setRidePopupPanel(true);
             
             // TEST: Force show alert to confirm popup should appear
-            alert('🎉 New ride received! Check for popup.');
+            // alert('🎉 New ride received! Check for popup.');
+            alert("You have received a new ride request. Click OK to review the details and confirm the ride.");
+
         });
         
         // Test listener
