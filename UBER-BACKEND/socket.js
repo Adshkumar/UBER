@@ -7,7 +7,11 @@ let io;
 function initializeSocket(server) {
     io = socketIo(server, {
         cors: {
-            origin: ["http://localhost:5173", "http://localhost:5174", "http://localhost:3000", "http://localhost:4000"],
+            origin: ["http://localhost:5173",
+                     "http://localhost:5174", 
+                     "http://localhost:3000", 
+                     "http://localhost:4000",
+                     "https://uber-git-main-adshkumars-projects.vercel.app"],
             methods: ['GET', 'POST'],
             credentials: true
         }
