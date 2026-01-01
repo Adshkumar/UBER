@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom' // Added useLocation
+import { Link, useLocation } from 'react-router-dom' 
 import { useEffect, useContext } from 'react'
 import { SocketContext } from '../context/SocketContext'
 import { useNavigate } from 'react-router-dom'
@@ -8,7 +8,7 @@ import LiveTracking from '../components/LiveTracking'
 
 const Riding = () => {
     const location = useLocation()
-    const { ride } = location.state || {} // Retrieve ride data
+    const { ride } = location.state || {} 
     const { socket } = useContext(SocketContext)
     const navigate = useNavigate()
 

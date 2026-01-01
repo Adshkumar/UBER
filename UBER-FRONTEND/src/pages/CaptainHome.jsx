@@ -25,19 +25,19 @@ const CaptainHome = () => {
     useEffect(() => {
         if (!captain?._id) return;
         
-        console.log('🚗 Captain ID:', captain._id);
+        // console.log('🚗 Captain ID:', captain._id);
         
         // Join socket room
         socket.emit('join', {
             userId: captain._id,
             userType: 'captain'
         });
-        console.log('📡 Join event emitted for captain');
+        // console.log('📡 Join event emitted for captain');
         
         // Listen for new ride
         socket.on('new-ride', (data) => {
-            console.log('🎉 NEW RIDE RECEIVED!', data);
-            console.log('✅ Setting ride state and showing popup');
+            // console.log('🎉 NEW RIDE RECEIVED!', data);
+            // console.log('✅ Setting ride state and showing popup');
             setRide(data);
             setRidePopupPanel(true);
             
@@ -49,7 +49,7 @@ const CaptainHome = () => {
         
         // Test listener
         socket.on('test-ride', (data) => {
-            console.log('🧪 Test ride received:', data);
+            // console.log('🧪 Test ride received:', data);
             alert('Test notification: ' + data.message);
         });
 
@@ -57,7 +57,7 @@ const CaptainHome = () => {
         const updateLocation = () => {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(position => {
-                    console.log('📍 Position updated:', position.coords.latitude, position.coords.longitude);
+                    // console.log('📍 Position updated:', position.coords.latitude, position.coords.longitude);
                     
                     socket.emit('update-location-captain', {
                         userId: captain._id,
@@ -82,12 +82,12 @@ const CaptainHome = () => {
 
     // Add useEffect to debug when ridePopupPanel changes
     useEffect(() => {
-        console.log('🔍 ridePopupPanel changed to:', ridePopupPanel);
-        console.log('🔍 Current ride:', ride);
+        // console.log('🔍 ridePopupPanel changed to:', ridePopupPanel);
+        // console.log('🔍 Current ride:', ride);
     }, [ridePopupPanel, ride]);
 
     async function confirmRide() {
-        console.log('Confirming ride:', ride?._id);
+        // console.log('Confirming ride:', ride?._id);
         
         const token = localStorage.getItem('captain_token') || localStorage.getItem('token');
         
@@ -100,18 +100,18 @@ const CaptainHome = () => {
                 }
             })
 
-            console.log('✅ Ride confirmed:', response.data);
+            // console.log('✅ Ride confirmed:', response.data);
             setRidePopupPanel(false);
             setConfirmRidePopupPanel(true);
         } catch (error) {
-            console.error('❌ Error confirming ride:', error);
+            // console.error('❌ Error confirming ride:', error);
             alert('Failed to confirm ride: ' + (error.response?.data?.message || error.message));
         }
     }
 
 
     useGSAP(function () {
-        console.log('🎬 GSAP animation triggered for ridePopupPanel:', ridePopupPanel);
+        // console.log('🎬 GSAP animation triggered for ridePopupPanel:', ridePopupPanel);
         
         if (ridePopupPanel) {
             gsap.to(ridePopupPanelRef.current, {

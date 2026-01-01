@@ -28,9 +28,9 @@ const SocketProvider = ({ children }) => {
                         userId: payload._id, 
                         userType: 'user' 
                     });
-                    console.log('User joined socket room:', payload._id);
+                    // console.log('User joined socket room:', payload._id);
                 } catch (e) {
-                    console.error('Error joining as user:', e);
+                    // console.error('Error joining as user:', e);
                 }
             }
             
@@ -41,19 +41,19 @@ const SocketProvider = ({ children }) => {
                         userId: payload._id, 
                         userType: 'captain' 
                     });
-                    console.log('Captain joined socket room:', payload._id);
+                    // console.log('Captain joined socket room:', payload._id);
                 } catch (e) {
-                    console.error('Error joining as captain:', e);
+                    // console.error('Error joining as captain:', e);
                 }
             }
         });
 
         socketInstance.on('disconnect', () => {
-            console.log('Disconnected from server');
+            // console.log('Disconnected from server');
         });
 
         socketInstance.on('connect_error', (error) => {
-            console.error('Socket connection error:', error);
+            // console.error('Socket connection error:', error);
         });
 
         return () => {
