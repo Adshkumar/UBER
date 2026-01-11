@@ -6,9 +6,9 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const UserLogin = () => {
-  const [ email, setEmail ] = useState('')
-  const [ password, setPassword ] = useState('')
-  const [ userData, setUserData ] = useState({})
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [userData, setUserData] = useState({})
 
   const { user, setUser } = useContext(UserDataContext)
   const navigate = useNavigate()
@@ -77,7 +77,7 @@ const UserLogin = () => {
       <div>
         <Link
           to='/captain-login'
-          className='bg-[#10b461] flex items-center justify-center text-white font-semibold mb-5 rounded-lg px-4 py-2 w-full text-lg placeholder:text-base'
+          className='bg-[#10b461] flex items-center justify-center text-white font-semibold mb-10 rounded-lg px-4 py-2 w-full text-lg placeholder:text-base'
         >Sign in as Captain</Link>
       </div>
     </div>
