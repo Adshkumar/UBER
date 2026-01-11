@@ -17,7 +17,7 @@ app.use(cors({
         'http://localhost:5173',
         'http://localhost:5174', 
         'http://localhost:3000',
-        'https://your-vercel-app.vercel.app',
+        'https://uber-psi-three.vercel.app',
         'https://uber-git-main-adshkumars-projects.vercel.app',
         'https://uber-woad.vercel.app' 
     ],
